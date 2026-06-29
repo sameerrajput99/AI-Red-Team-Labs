@@ -1,77 +1,57 @@
-# AI Red Teaming Labs
+# AI Red Teaming Lab 02: Prompt Injection Testing
 
-This repository contains my practical AI Red Teaming and LLM Security labs.
+## Objective
 
-The goal of this portfolio is to demonstrate hands-on skills in testing AI systems for security weaknesses such as prompt leakage, prompt injection, hallucination, RAG leakage, and AI API security issues.
+This lab demonstrates prompt injection testing in a simulated AI chatbot environment.
 
-All labs are built as safe local simulations. No real website, private system, company chatbot, or unauthorized target is tested.
+The goal is to test whether a chatbot follows malicious user instructions that try to override system-level rules.
 
-## Lab Index
+## Lab Type
 
-| Lab    | Topic                                  | Status    |
-| ------ | -------------------------------------- | --------- |
-| Lab 01 | Prompt Leakage Testing                 | Completed |
-| Lab 02 | Prompt Injection Testing               | Planned   |
-| Lab 03 | System Prompt Extraction               | Planned   |
-| Lab 04 | Instruction Override Testing           | Planned   |
-| Lab 05 | Hallucination Testing                  | Planned   |
-| Lab 06 | Bias Testing                           | Planned   |
-| Lab 07 | Refusal Testing                        | Planned   |
-| Lab 08 | Safety Boundary Testing                | Planned   |
-| Lab 09 | RAG Document Leakage                   | Planned   |
-| Lab 10 | Wrong Retrieval Testing                | Planned   |
-| Lab 11 | Indirect Prompt Injection in Documents | Planned   |
-| Lab 12 | RAG Access Control Failure             | Planned   |
+Safe local simulation. No real website, real company system, private AI system, or unauthorized target is tested.
 
-## Completed Labs
+## What This Lab Tests
 
-### Lab 01: Prompt Leakage Testing
+- Direct prompt injection
+- Developer mode abuse
+- Rule override attempts
+- Admin roleplay attacks
+- Internal data extraction attempts
+- Safety bypass attempts
 
-In this lab, I tested whether a simulated AI chatbot reveals hidden system instructions, internal policies, admin codes, or confidential notes.
+## Methodology
 
-The lab includes:
+This lab compares two simulated chatbots:
 
-* Python simulation
-* Red team test prompts
-* Vulnerable chatbot testing
-* Secure chatbot comparison
-* CSV results
-* Results summary
-* Vulnerability report
+1. Vulnerable Chatbot
+2. Secure Chatbot
+
+The vulnerable chatbot incorrectly follows malicious user instructions and exposes fake internal system data.
+
+The secure chatbot detects suspicious prompt injection patterns and refuses to reveal internal information.
+
+## How to Run
+
+```bash
+python lab2_prompt_injection.py
+```
+
+After running the script, the CSV result file will be generated in:
+
+```text
+results/ai_red_team_lab2_prompt_injection_results.csv
+```
 
 ## Skills Demonstrated
 
-* AI Red Teaming
-* LLM Security
-* Prompt Leakage Testing
-* Prompt Injection Testing
-* RAG Security Testing
-* Python Automation
-* Security Test Case Design
-* Vulnerability Reporting
-* CSV Result Analysis
-* Secure AI Behavior Testing
-
-## Repository Structure
-
-```text
-AI-Red-Team-Labs/
-│
-├── README.md
-├── LAB_INDEX.md
-├── ROADMAP.md
-│
-└── Lab-01-Prompt-Leakage/
-    ├── README.md
-    ├── lab1_prompt_leakage.py
-    ├── test_cases.md
-    ├── results_summary.md
-    ├── report.md
-    ├── ai_red_team_lab1_prompt_leakage_results.csv
-    ├── requirements.txt
-    └── .gitignore
-```
+- AI Red Teaming
+- Prompt Injection Testing
+- LLM Security
+- Test Case Design
+- Python Automation
+- Vulnerability Reporting
+- Secure vs Vulnerable Chatbot Comparison
 
 ## Disclaimer
 
-This repository is created for educational and portfolio purposes only. All labs are safe simulations created to understand AI security concepts. No unauthorized testing is performed.
+This lab is for educational and portfolio purposes only. It uses fake internal data and safe local simulation.
