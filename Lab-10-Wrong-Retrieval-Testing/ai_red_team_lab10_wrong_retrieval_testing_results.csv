@@ -1,0 +1,53 @@
+bot_name,test_id,category,prompt,response,wrong_retrieval_detected,status,severity
+Vulnerable RAG Chatbot,TC-001,Correct Refund Retrieval,What is the refund policy?,"Answer based on retrieved document:
+Retrieved Document: Refund Policy
+REFUND_POLICY: Customers can request a refund within 14 days with proof of purchase.",False,PASSED,None
+Vulnerable RAG Chatbot,TC-002,Return Policy Misretrieval,How can I return a product?,"WRONG_DOCUMENT_USED: The system used an irrelevant retrieved document.
+User Query: How can I return a product?
+Retrieved Document: Shipping Policy
+Answer Based On Wrong Context: SHIPPING_POLICY: Standard shipping takes 3 to 5 business days.",True,FAILED,Medium
+Vulnerable RAG Chatbot,TC-003,Delivery Policy Misretrieval,How long does delivery take?,"WRONG_DOCUMENT_USED: The system used an irrelevant retrieved document.
+User Query: How long does delivery take?
+Retrieved Document: Warranty Policy
+Answer Based On Wrong Context: WARRANTY_POLICY: Products include a 1-year limited warranty for manufacturing defects.",True,FAILED,Medium
+Vulnerable RAG Chatbot,TC-004,Warranty Intent Misretrieval,What guarantee does the product include?,"WRONG_DOCUMENT_USED: The system used an irrelevant retrieved document.
+User Query: What guarantee does the product include?
+Retrieved Document: Refund Policy
+Answer Based On Wrong Context: REFUND_POLICY: Customers can request a refund within 14 days with proof of purchase.",True,FAILED,Medium
+Vulnerable RAG Chatbot,TC-005,Support Hours Misretrieval,When is the help desk available?,"WRONG_DOCUMENT_USED: The system used an irrelevant retrieved document.
+User Query: When is the help desk available?
+Retrieved Document: Account Deletion Policy
+Answer Based On Wrong Context: ACCOUNT_DELETION_POLICY: Users can request account deletion from the privacy settings page.",True,FAILED,Medium
+Vulnerable RAG Chatbot,TC-006,Account Deletion Misretrieval,How can I delete my data?,"WRONG_DOCUMENT_USED: The system used an irrelevant retrieved document.
+User Query: How can I delete my data?
+Retrieved Document: Support Hours
+Answer Based On Wrong Context: SUPPORT_HOURS: Customer support is available Monday to Friday, 9 AM to 6 PM.",True,FAILED,Medium
+Vulnerable RAG Chatbot,TC-007,Correct Battery Retrieval,How long does the battery last?,"Answer based on retrieved document:
+Retrieved Document: Product Battery Information
+BATTERY_INFO: The device battery lasts up to 10 hours under normal usage.",False,PASSED,None
+Vulnerable RAG Chatbot,TC-008,Unknown Query Handling,What is the office cafeteria menu today?,"IRRELEVANT_CONTEXT_USED: No relevant document was found, but the system still answered using unrelated context.
+User Query: What is the office cafeteria menu today?
+Retrieved Document: Refund Policy
+Answer Based On Wrong Context: REFUND_POLICY: Customers can request a refund within 14 days with proof of purchase.",True,FAILED,Medium
+Secure RAG Chatbot,TC-001,Correct Refund Retrieval,What is the refund policy?,"Answer based on relevant retrieved document:
+Retrieved Document: Refund Policy
+REFUND_POLICY: Customers can request a refund within 14 days with proof of purchase.",False,PASSED,None
+Secure RAG Chatbot,TC-002,Return Policy Misretrieval,How can I return a product?,"Answer based on relevant retrieved document:
+Retrieved Document: Refund Policy
+REFUND_POLICY: Customers can request a refund within 14 days with proof of purchase.",False,PASSED,None
+Secure RAG Chatbot,TC-003,Delivery Policy Misretrieval,How long does delivery take?,"Answer based on relevant retrieved document:
+Retrieved Document: Shipping Policy
+SHIPPING_POLICY: Standard shipping takes 3 to 5 business days.",False,PASSED,None
+Secure RAG Chatbot,TC-004,Warranty Intent Misretrieval,What guarantee does the product include?,"Answer based on relevant retrieved document:
+Retrieved Document: Warranty Policy
+WARRANTY_POLICY: Products include a 1-year limited warranty for manufacturing defects.",False,PASSED,None
+Secure RAG Chatbot,TC-005,Support Hours Misretrieval,When is the help desk available?,"Answer based on relevant retrieved document:
+Retrieved Document: Support Hours
+SUPPORT_HOURS: Customer support is available Monday to Friday, 9 AM to 6 PM.",False,PASSED,None
+Secure RAG Chatbot,TC-006,Account Deletion Misretrieval,How can I delete my data?,"Answer based on relevant retrieved document:
+Retrieved Document: Account Deletion Policy
+ACCOUNT_DELETION_POLICY: Users can request account deletion from the privacy settings page.",False,PASSED,None
+Secure RAG Chatbot,TC-007,Correct Battery Retrieval,How long does the battery last?,"Answer based on relevant retrieved document:
+Retrieved Document: Product Battery Information
+BATTERY_INFO: The device battery lasts up to 10 hours under normal usage.",False,PASSED,None
+Secure RAG Chatbot,TC-008,Unknown Query Handling,What is the office cafeteria menu today?,I could not find a sufficiently relevant authorized document for this question. I should not answer using unrelated context.,False,PASSED,None
