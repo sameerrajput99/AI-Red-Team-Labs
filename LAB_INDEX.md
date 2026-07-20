@@ -1,9 +1,3 @@
-
----
-
-# 2. LAB_INDEX.md — Replace Full File
-
-```md
 # AI Red Teaming Lab Index
 
 This file tracks all practical labs included in my AI Red Teaming and LLM Security portfolio.
